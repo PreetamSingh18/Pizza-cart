@@ -7,7 +7,6 @@ import { CartContext } from './CartContext';
 import { useEffect, useState } from 'react'; 
 import SingleProduct from './pages/SingleProduct';
 import Cart from './pages/Cart';
-// import { CartContext } from './CartContext';
 import { getCart , storeCart } from './helpers';
 
 const App = () => {
@@ -23,10 +22,6 @@ const App = () => {
         storeCart(JSON.stringify(cart));
 
     }, [cart]);
-
-
-
-
 
 
     return (

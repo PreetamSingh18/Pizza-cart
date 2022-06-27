@@ -1,11 +1,11 @@
-import  { useState , useContext } from 'react'
+import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
- import { CartContext } from '../CartContext';
-// import CartContext from '../CartContext';
+import { CartContext } from '../CartContext';
+
 
 
 const Product = (props) => {
-     const[isAdding, setIsAdding]=useState(false);
+    const [isAdding, setIsAdding] = useState(false);
 
     const { cart, setCart } = useContext(CartContext);
 
@@ -15,7 +15,7 @@ const Product = (props) => {
         event.preventDefault();
         let _cart = { ...cart };
         if (!_cart.items) {
-            _cart.items = {};
+            _cart.items = {}
         }
         if (_cart.items[product._id]) {
             _cart.items[product._id] += 1;
@@ -23,15 +23,18 @@ const Product = (props) => {
         else {
             _cart.items[product._id] = 1;
         }
-        if(!_cart.totalItems){
+
+        if (!_cart.totalItems) {
             _cart.totalItems = 0;
         }
         _cart.totalItems += 1;
+
+
         setCart(_cart);
         setIsAdding(true);
-        setTimeout(()=>{
+        setTimeout(() => {
             setIsAdding(false);
-        },1000);
+        }, 1000);
 
         // const cart={
         //     items:{
@@ -51,15 +54,15 @@ const Product = (props) => {
 
                 </div>
                 <div className='flex justify-between items-center mt-4'>
-                    <span>₹{ product.price}</span>
-                    <button disabled ={isAdding } onClick={(e) => { addToCart(e, product) }} className={`${isAdding ? 'bg-green-500' : 'bg-yellow-500' } py-1 px-4 rounded-full font-bold`}>ADD{isAdding ?'ED':""}</button>
+                    <span>₹{product.price}</span>
+                    <button disabled={isAdding} onClick={(e) => { addToCart(e, product) }} className={`${isAdding ? 'bg-green-500' : 'bg-yellow-500'} py-1 px-4 rounded-full font-bold`}>ADD{isAdding ? 'ED' : ""}</button>
 
-                </div> 
-            </div> 
+                </div>
+            </div>
 
         </Link>
 
     )
 }
 
-export default Product
+export default Product;

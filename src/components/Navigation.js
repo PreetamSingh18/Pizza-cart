@@ -12,6 +12,7 @@ const Navigation = () => {
     }
 
     const { cart } = useContext(CartContext);
+    
     return (
         <>
             <nav className="container mx-auto flex item-center justify-between py-4">
