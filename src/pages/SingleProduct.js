@@ -9,7 +9,7 @@ const SingleProduct = () => {
    const history= useNavigate();
     // console.log(params);
     useEffect( ()=>{
-        fetch(`/api/products/${params._id}`)
+        fetch(`https://star-spark-pasta.glitch.me/api/products/${params._id}`)
         .then(res =>res.json())
         .then(product =>{
             setProduct(product);

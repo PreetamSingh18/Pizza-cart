@@ -19,7 +19,7 @@ const Cart = () => {
       return;
     }
 
-    fetch('https://ecom-rest-apis.herokuapp.com/api/products/cart-items', {
+    fetch('https://star-spark-pasta.glitch.me/api/products/cart-items', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
